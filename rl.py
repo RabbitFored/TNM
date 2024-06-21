@@ -4,42 +4,49 @@ import json
 community = ["OC", "BC", "MBC&DNC", "BCM", "SC", "ST", "SCA"]
 
 
-def chunk(lines):
+def chunk(lines,sp):
   li = []
   a = 0
   for i in range(0, len(lines)):
     if lines[i].startswith(" "):
-      c = i + 1
+      c = i + sp
       li.append(lines[a:c])
       a = c
   return li
 
 
-def get_ranks(file_name):
+def get_ranks(file_name,vec):
   ranks = []
 
   pages = fitz.open(file_name)
   for page in pages:
     lines = page.get_text().split("\n")
-    line = chunk(lines[11:-2])
+
+    line = chunk(lines[vec["list"]["start"]:vec["list"]["end"]],vec["split"])
+    
 
     for data in line:
+      rank = data[vec["index"]["rank"]]
 
-      rank = data[0]
-      app_no = data[1]
-      roll_no = data[2]
-      name = data[3]
-      comm = data[4]
+      app_no = data[vec["index"]["app_no"]]
+      roll_no = data[vec["index"]["roll_no"]]
+      name = data[vec["index"]["name"]]
+      comm = data[vec["index"]["comm"]]
+
       if comm not in community:
-        comm = data[3].split(" ")[-1]
-        name = " ".join(data[3].split(" ")[:-1])
+        name = " ".join(comm.split(" ")[:-1])
+        comm = name.split(" ")[-1]
+
         if comm not in community:
+  
           for c in community:
             if c in comm:
               name = name + " " + comm[:-len(c)]
               comm = c
-      mark = data[-1].strip()
-      comm_rank = data[-2] if comm != "OC" else ""
+   
+
+      mark = data[vec["index"]["mark"]].strip()
+      comm_rank = data[vec["index"]["comm_rank"]] if comm != "OC" else ""
 
       ranks.append({
           "rank": rank,
@@ -53,7 +60,8 @@ def get_ranks(file_name):
   return ranks
 
 
-def rl(rlist, file_name):
-  ranks = get_ranks(rlist)
+def rl(rlist, file_name,vec):
+  with open(vec, "r") as v:
+    ranks = get_ranks(rlist,json.load(v))
   with open(file_name, "w") as f:
     json.dump(ranks, f, indent=4)
