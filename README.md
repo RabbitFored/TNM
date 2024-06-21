@@ -1,0 +1,1 @@
+This repo uses some of the publicly available data to help students to know more about TN medical council and choose a clg.
