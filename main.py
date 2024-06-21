@@ -7,7 +7,7 @@ from rl import rl
 import utils
 
 # reading the database
-data = pd.read_csv("data/TNMC-PR-LIST-2023.csv")
+data = pd.read_csv("data/TNMC-PR-LIST-2023/TNMC-PR-LIST-2023.csv")
 
 # using only data attribute
 sns.histplot(x='mark', data=data, kde=True, hue='comm')
