@@ -1,0 +1,19 @@
+
+{
+"file": "assets/docs/TNMC-PR-LIST-2022.pdf",
+"list" : {
+    "start":12,
+    "end" :  -2
+ },
+"index" : {
+      "rank" : -2,
+      "app_no" : 3,
+      "roll_no" : 4,
+      "name" : 0,
+      "comm" : 2,
+      "mark" : 1,
+      "comm_rank" : -1
+}, 
+    "split": 6,
+    "af" : true
+}

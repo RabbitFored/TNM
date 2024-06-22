@@ -1,0 +1,19 @@
+
+{
+"file": "assets/docs/TNMC-PR-LIST-2023.pdf",
+"list" : {
+    "start":11,
+    "end" :  -2
+ },
+"index" : {
+      "rank" : 0,
+      "app_no" : 1,
+      "roll_no" : 2,
+      "name" : 3,
+      "comm" : 4,
+      "mark" : -1,
+      "comm_rank" : -2
+}, 
+    "split": 1,
+     "af" : false
+}

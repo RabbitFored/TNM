@@ -3,24 +3,23 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
-#from rl import rl
-#import utils
+from rl import rl
 
 # reading the database
 
+def show_rl_plot(yr):
+    data = pd.read_json(f"data/TNMC-PR-LIST/{yr}/TNMC-PR-LIST-{yr}.json")
+    sns.histplot(x='mark', data=data, kde=True, hue='comm')
+    plt.title(f"TN RANKLIST - {yr}")
+    plt.show()
 
-data = pd.read_csv("data/TNMC-PR-LIST/2023/TNMC-PR-LIST-2023.csv")
+    
+def gen_data(yr):
+    rl(map=f"assets/docs/rl-maps/TNMC-PR-LIST-{yr}.map.json" , rlist=f"assets/docs/TNMC-PR-LIST-{yr}.pdf", file_name=f"data/TNMC-PR-LIST/{yr}/TNMC-PR-LIST-{yr}.json")
+    
+def gen_show_rl_plot(yr):
+    gen_data(yr)
+    show_rl_plot(yr)
 
- #using only data attribute
-sns.histplot(x='mark', data=data, kde=True, hue='comm')
-
-plt.show() #rlist, file_name,vec
-
-
-#def init():
-    # print("Staring...")
-    # rl(vec="assets/docs/rl-vec/TNMC-PR-LIST-2023.json" , rlist="assets/docs/TNMC-PR-LIST-2023.pdf", file_name="data/TNMC-PR-LIST/2023/TNMC-PR-LIST-2023.json")
-    # utils.json_to_csv("data/TNMC-PR-LIST/2023/TNMC-PR-LIST-2023.json","data/TNMC-PR-LIST/2023/TNMC-PR-LIST-2023.csv")
-  #utils.json_to_csv("TNMC-PR-LIST-2023.json","TNMC-PR-LIST-2023.csv")
-  
-
+yr = "2023"
+gen_show_rl_plot(yr)
