@@ -2,8 +2,10 @@ This repo uses some of the publicly available data to help students to know more
 
 ## Ranklist graphs:
 # 2021
-![Alt text](assets/images/graphs/TNRL(2021).png)
+<img src="assets/images/graphs/TNRL(2021).png" width="350">
+
 # 2022
-![Alt text](assets/images/graphs/TNRL(2022).png)
+<img src="assets/images/graphs/TNRL(2022).png" width="350">
+
 # 2023
-![Alt text](assets/images/graphs/TNRL(2023).png)
+<img src="assets/images/graphs/TNRL(2023).png" width="350">
