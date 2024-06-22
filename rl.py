@@ -69,7 +69,7 @@ def get_ranks(file_name, map):
           "rank": rank,
           "app_no": app_no,
           "roll_no": roll_no,
-          "name": name,
+          # "name": name,
           "comm": comm,
           "mark": mark,
           "comm_rank": comm_rank
