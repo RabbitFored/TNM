@@ -1,3 +1,3 @@
-from rl_plot import yrs, show_plot
+from rl_plot import yrs, gen_show_plot
 
-show_plot(yrs[1])
+gen_show_plot(yrs[2])

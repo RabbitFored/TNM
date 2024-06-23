@@ -60,6 +60,10 @@ def get_ranks(file_name, map):
 
         continue
 
+
+
+
+
       if comm != "OC":
         comm_rank = data[map["index"]["comm_rank"]]
       else:
@@ -69,6 +73,7 @@ def get_ranks(file_name, map):
           "rank": rank,
           "app_no": app_no,
           "roll_no": roll_no,
+          # name not stored to protect student privacy
           # "name": name,
           "comm": comm,
           "mark": mark,
