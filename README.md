@@ -10,3 +10,6 @@ This repo uses some of the publicly available data to help students to know more
 
 ### 2023
 <img src="assets/images/graphs/TNRL(2023).png" width="350">
+
+### 2024
+<img src="assets/images/graphs/TNRL(2024).png" width="350">
